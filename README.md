@@ -24,6 +24,19 @@ traceur> f(2)
 traceur>
 ```
 
+```shell
+➜  traceur-cli
+traceur> var f = () => {
+... return "Hello, World!";
+... };
+undefined
+traceur> f()
+'Hello, World!'
+traceur>
+```
+
+
+
 ### Destructuring
 ```shell
 ➜  traceur-cli
@@ -50,6 +63,43 @@ traceur> obj
 { '0': 'Foo' }
 traceur>
 ```
+
+
+### REPL Functions
+
+You can use regular Node repl functions as `.save` and `.load`.
+
+```shell
+➜  traceur-cli
+traceur> .help
+.break  Sometimes you get stuck, this gets you out
+.clear  Alias for .break
+.exit Exit the repl
+.help Show repl options
+.load Load JS from a file into the REPL session
+.save Save all evaluated commands in this REPL session to a file
+
+traceur> var f = () => "hello, world";
+undefined
+traceur> f
+[Function]
+traceur> f()
+'hello, world'
+traceur> .save test
+Session saved to:test
+traceur> .exit
+
+➜  traceur-cli
+traceur> .load test
+traceur> var f = () => "hello, world";
+undefined
+traceur> f
+[Function]
+traceur> f()
+'hello, world'
+traceur> .exit
+```
+
 
 ## Eval Examples
 

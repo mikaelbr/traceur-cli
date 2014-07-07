@@ -150,6 +150,32 @@ f(2)
 4
 ```
 
+Also works with using `import`/`export`:
+
+```javascript
+// a.js
+export default "https://github.com/mikaelbr/traceur-cli";
+```
+
+```javascript
+// b.js
+import url from './a';
+export var username = 'mikaelbr';
+export var url = url;
+```
+
+```javascript
+// entry.js
+import {username, url} from './b';
+console.log(username, url);
+```
+
+```shell
+# Run command
+➜  traceur-cli entry.js
+mikaelbr https://github.com/mikaelbr/traceur-cli
+```
+
 ## Original usage of traceur
 
 You can use the traceur-cli as a wrapper for the original functionality of [traceur](https://github.com/google/traceur-compiler).
@@ -178,5 +204,6 @@ Or compiling files:
 
 1. Make it work with array/generator comprehensions.
 2. ~~Add support for multiline/blocks~~
-3. Add support for modules/requires
-4. Tests
+3. ~~Add support for modules/requires on file load~~
+4. Add support for modules/requires in repl
+5. Tests

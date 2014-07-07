@@ -16,7 +16,7 @@ npm install -g traceur-cli
 
 ### Fat arrows
 ```shell
-➜  traceur-cli  traceur-cli
+➜  traceur-cli
 traceur> var f = (a) => a * 2;
 undefined
 traceur> f(2)
@@ -26,7 +26,7 @@ traceur>
 
 ### Destructuring
 ```shell
-➜  traceur-cli  traceur-cli
+➜  traceur-cli
 traceur> var { user, age } = { user: "mikaelbr", url: "https://github.com/mikaelbr" };
 undefined
 traceur> user
@@ -39,7 +39,7 @@ traceur>
 ### Computed Property Names
 
 ```shell
-➜  traceur-cli  traceur-cli
+➜  traceur-cli
 traceur> var x = 0;
 undefined
 traceur> var obj = { [x]: "Foo"; };
@@ -54,18 +54,18 @@ traceur>
 ## Eval Examples
 
 ```shell
-➜  traceur-cli  traceur-cli -e '({ foo: "bar", bar: "bat" });'
+➜  traceur-cli -e '({ foo: "bar", bar: "bat" });'
 { foo: 'bar', bar: 'bat' }
 ```
 
 ```shell
-➜  traceur-cli  traceur-cli -e '({ foo: "bar", bar: "bat" });' > test.txt
-➜  traceur-cli  cat test.txt
+➜  traceur-cli -e '({ foo: "bar", bar: "bat" });' > test.txt
+➜  cat test.txt
 { foo: 'bar', bar: 'bat' }
 ```
 
 ```shell
-➜  traceur-cli  traceur-cli -e 'console.log("hello"); var foo = "Bar"; console.log(foo); foo;'
+➜  traceur-cli -e 'console.log("hello"); var foo = "Bar"; console.log(foo); foo;'
 hello
 Bar
 Bar
@@ -77,7 +77,7 @@ You can use the traceur-cli as a wrapper for the original functionality of [trac
 For instance by using `-h`:
 
 ```shell
-➜  traceur-cli  traceur-cli -h
+➜  traceur-cli -h
 
   Usage: traceur-cli [options] [files]
 
@@ -89,8 +89,8 @@ For instance by using `-h`:
 Or compiling files:
 
 ```shell
-➜  traceur-cli  traceur-cli --script example.js --out compiled.js
-➜  traceur-cli  node compiled.js
+➜  traceur-cli --script example.js --out compiled.js
+➜  node compiled.js
 { '0': 'Foo' }
 ```
 

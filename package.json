@@ -1,6 +1,6 @@
 {
   "name": "traceur-cli",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Adds REPL and live eval to the traceur CLI",
   "main": "./lib/api.js",
   "dependencies": {

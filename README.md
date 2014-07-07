@@ -1,8 +1,8 @@
-traceur-cli – wraps traceur cli to add repl and string and file eval
+traceur-cli – wraps traceur cli to add repl and string eval
 ====
 
 Experimental module to wrap the [traceur-compiler cli](https://github.com/google/traceur-compiler)
-to add REPL and functionality for doing string or live file evaluations.
+to add REPL and functionality for doing string evaluations.
 
 You can still use the original features as you'd expect.
 
@@ -135,45 +135,6 @@ traceur> ({ foo: "bar", bar: "bat" });
 { foo: 'bar', bar: 'bat' }
 traceur> %
 ➜
-```
-
-## Eval Files
-
-```javascript
-// Contents of: example.js
-var f = (a) => a * 2;
-console.log(f(2));
-```
-
-```shell
-➜  traceur-cli example.js
-4
-```
-
-Also works with using `import`/`export`:
-
-```javascript
-// a.js
-export default "https://github.com/mikaelbr/traceur-cli";
-```
-
-```javascript
-// b.js
-import url from './a';
-export var username = 'mikaelbr';
-export var url = url;
-```
-
-```javascript
-// entry.js
-import {username, url} from './b';
-console.log(username, url);
-```
-
-```shell
-# Run command
-➜  traceur-cli entry.js
-mikaelbr https://github.com/mikaelbr/traceur-cli
 ```
 
 ## Original usage of traceur

@@ -1,8 +1,8 @@
-traceur-cli -- wraps traceur cli to add repl and string eval
+traceur-cli – wraps traceur cli to add repl and string and file eval
 ====
 
 Experimental module to wrap the [traceur-compiler cli](https://github.com/google/traceur-compiler)
-to add REPL and functionality for doing string evaluations.
+to add REPL and functionality for doing string or live file evaluations.
 
 You can still use the original features as you'd expect.
 
@@ -109,6 +109,12 @@ traceur> .exit
 ```
 
 ```shell
+➜  traceur-cli -e 'var { foo, bar } = {foo: "Some", bar: "Data"}; console.log(foo + " " + bar)'
+Some Data
+undefined
+```
+
+```shell
 ➜  traceur-cli -e '({ foo: "bar", bar: "bat" });' > test.txt
 ➜  cat test.txt
 { foo: 'bar', bar: 'bat' }
@@ -129,6 +135,19 @@ traceur> ({ foo: "bar", bar: "bat" });
 { foo: 'bar', bar: 'bat' }
 traceur> %
 ➜
+```
+
+## Eval Files
+
+```javascript
+// Contents of: example.js
+var f = (a) => a * 2;
+f(2)
+```
+
+```shell
+➜  traceur-cli example.js
+4
 ```
 
 ## Original usage of traceur
@@ -158,5 +177,6 @@ Or compiling files:
 # TODO
 
 1. Make it work with array/generator comprehensions.
-2. Add support for multiline/blocks
-3. Tests
+~~2. Add support for multiline/blocks~~
+3. Add support for modules/requires
+4. Tests

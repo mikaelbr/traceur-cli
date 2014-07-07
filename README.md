@@ -71,6 +71,16 @@ Bar
 Bar
 ```
 
+### Pipeing
+
+```shell
+➜  echo '({ foo: "bar", bar: "bat" });' | traceur-cli
+traceur> ({ foo: "bar", bar: "bat" });
+{ foo: 'bar', bar: 'bat' }
+traceur> %
+➜
+```
+
 ## Original usage of traceur
 
 You can use the traceur-cli as a wrapper for the original functionality of [traceur](https://github.com/google/traceur-compiler).

@@ -177,6 +177,6 @@ Or compiling files:
 # TODO
 
 1. Make it work with array/generator comprehensions.
-~~2. Add support for multiline/blocks~~
+2. ~~Add support for multiline/blocks~~
 3. Add support for modules/requires
 4. Tests

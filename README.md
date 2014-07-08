@@ -163,7 +163,7 @@ Or compiling files:
 
 # TODO
 
-1. Make it work with array/generator comprehensions.
+1. ~~Make it work with **iterators**.~~
 2. ~~Add support for multiline/blocks~~
-3. Add support for modules/requires in repl. (Has now basic support.)
+3. ~~Add support for modules/requires in repl. (Has now basic support.)~~
 4. Tests

@@ -165,6 +165,5 @@ Or compiling files:
 
 1. Make it work with array/generator comprehensions.
 2. ~~Add support for multiline/blocks~~
-3. ~~Add support for modules/requires on file load~~
-4. Add support for modules/requires in repl
-5. Tests
+3. Add support for modules/requires in repl. (Has now basic support.)
+4. Tests

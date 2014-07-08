@@ -6,6 +6,8 @@ to add REPL and functionality for doing string evaluations.
 
 You can still use the original features as you'd expect.
 
+![Terminal Screencapture](terminal-recording.gif)
+
 ## Installation
 
 ```shell

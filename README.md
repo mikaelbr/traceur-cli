@@ -170,6 +170,11 @@ Bar
 Bar
 ```
 
+```shell
+➜  traceur-cli -e '(for (x of [1, 2, 3, 4]) "Foo: " + x).next()'
+{ value: 'Foo: 1', done: false }
+```
+
 ### Pipeing
 
 ```shell

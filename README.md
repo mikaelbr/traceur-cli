@@ -35,7 +35,28 @@ traceur> f()
 traceur>
 ```
 
+### Iterators
 
+```shell
+➜  traceur-cli
+traceur> var foo = (for (x of [1, 2, 3, 4]) "Foo: " + x);
+undefined
+traceur> foo.next();
+{ value: 'Foo: 1', done: false }
+traceur> foo.next();
+{ value: 'Foo: 2', done: false }
+traceur> foo.next();
+{ value: 'Foo: 3', done: false }
+```
+
+```shell
+➜  traceur-cli
+traceur> [for (x of [1, 2, 3, 4]) "Foo: " + x]
+[ 'Foo: 1',
+  'Foo: 2',
+  'Foo: 3',
+  'Foo: 4' ]
+```
 
 ### Destructuring
 ```shell
@@ -46,6 +67,28 @@ traceur> user
 'mikaelbr'
 traceur> url
 https://github.com/mikaelbr
+traceur>
+```
+
+
+### Modules
+
+```shell
+➜  traceur-cli
+traceur> import { username, url } from './b';
+undefined
+traceur> username
+'mikaelbr'
+traceur> url
+'https://github.com/mikaelbr/traceur-cli'
+```
+
+```shell
+➜  traceur-cli
+traceur> var { readFileSync } = require('fs');
+undefined
+traceur> readFileSync
+[Function]
 traceur>
 ```
 
@@ -165,5 +208,5 @@ Or compiling files:
 
 1. ~~Make it work with **iterators**.~~
 2. ~~Add support for multiline/blocks~~
-3. ~~Add support for modules/requires in repl. (Has now basic support.)~~
+3. ~~Add support for modules/requires in repl. (Has now basic support.)~
 4. Tests
